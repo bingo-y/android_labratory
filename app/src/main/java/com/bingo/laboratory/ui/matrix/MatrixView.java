@@ -29,17 +29,17 @@ public class MatrixView extends ImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         //画出原图像
         canvas.drawBitmap(bitmap, 0, 0, null);
         //画出转换后图像
         canvas.drawBitmap(bitmap, matrix, null);
-        super.onDraw(canvas);
     }
 
     @Override
     public void setImageMatrix(Matrix matrix) {
-        this.matrix.set(matrix);
         super.setImageMatrix(matrix);
+        this.matrix.set(matrix);
     }
 
     public Bitmap getImageBitmap() {
