@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.matrix.TransformMatrixActivity" />
+        <activity android:name=".ui.canvas.CanvasActivity" />
     </application>
 
 </manifest>
