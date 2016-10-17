@@ -22,4 +22,16 @@
         android:layout_height="80dp"
         android:gravity="center_vertical"
         android:text="打开canvas"/>
+    <TextView
+        android:id="@+id/tv_customer_view"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:text="打开customer_view"/>
+    <TextView
+        android:id="@+id/tv_bezier_view"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:text="打开bezier_view"/>
 </LinearLayout>

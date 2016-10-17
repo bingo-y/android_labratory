@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".ui.matrix.TransformMatrixActivity" />
         <activity android:name=".ui.canvas.CanvasActivity" />
+        <activity android:name=".ui.customview.CustomerViewActivity" />
+        <activity android:name=".ui.bezier.BezierActivity" />
     </application>
 
 </manifest>
