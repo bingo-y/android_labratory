@@ -36,7 +36,8 @@ public class CanvasActivity extends AppCompatActivity {
 //
 //        handler.sendEmptyMessageDelayed(0, 20);
 
-        SearchView searchView = new SearchView(this);
+        SearchView2 searchView = new SearchView2(this);
+//        SearchView searchView = new SearchView(this);
         setContentView(searchView);
     }
 }
