@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/menu"
+        style="@style/MenuStyle"
+        android:background="@android:drawable/ic_menu_compass"/>
+
+    <Button
+        android:id="@+id/item1"
+        style="@style/MenuItemStyle"
+        android:background="@android:drawable/ic_menu_call"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/item2"
+        style="@style/MenuItemStyle"
+        android:background="@android:drawable/ic_menu_camera"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/item3"
+        style="@style/MenuItemStyle"
+        android:background="@android:drawable/ic_menu_crop"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/item4"
+        style="@style/MenuItemStyle"
+        android:background="@android:drawable/ic_menu_edit"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/item5"
+        style="@style/MenuItemStyle"
+        android:background="@android:drawable/ic_menu_delete"
+        android:visibility="gone"/>
+
+</FrameLayout>

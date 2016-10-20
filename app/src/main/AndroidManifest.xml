@@ -19,6 +19,10 @@
         <activity android:name=".ui.canvas.CanvasActivity" />
         <activity android:name=".ui.customview.CustomerViewActivity" />
         <activity android:name=".ui.bezier.BezierActivity" />
+        <activity android:name=".ui.animator.value.CharValueAnimatorActivity" />
+        <activity android:name=".ui.animator.object.PlayObjectAnimatorActivity" />
+        <activity android:name=".ui.animator.object.PropertyValueActivity" />
+        <activity android:name=".ui.animator.object.PeacockAnimatorActivity" />
     </application>
 
 </manifest>
