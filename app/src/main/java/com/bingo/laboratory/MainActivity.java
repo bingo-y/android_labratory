@@ -15,6 +15,8 @@ import com.bingo.laboratory.ui.bezier.BezierActivity;
 import com.bingo.laboratory.ui.canvas.CanvasActivity;
 import com.bingo.laboratory.ui.customview.CustomerViewActivity;
 import com.bingo.laboratory.ui.matrix.TransformMatrixActivity;
+import com.bingo.laboratory.ui.scroll.ScrollActivity;
+import com.bingo.laboratory.ui.scroll.VPScrollActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         list.add("打开play_object_animator");
         list.add("打开property_value");
         list.add("打开peacock_animator");
+        list.add("打开scroll");
+        list.add("打开vp_scroll");
     }
 
     @Override
@@ -75,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 7 : {
                         ActivityDispatchUtil.startActivity(MainActivity.this, PeacockAnimatorActivity.class);
+                        break;
+                    }
+                    case 8 : {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, ScrollActivity.class);
+                        break;
+                    }
+                    case 9 : {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, VPScrollActivity.class);
                         break;
                     }
                 }

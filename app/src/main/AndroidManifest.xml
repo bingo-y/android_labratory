@@ -23,6 +23,8 @@
         <activity android:name=".ui.animator.object.PlayObjectAnimatorActivity" />
         <activity android:name=".ui.animator.object.PropertyValueActivity" />
         <activity android:name=".ui.animator.object.PeacockAnimatorActivity" />
+        <activity android:name=".ui.scroll.ScrollActivity"/>
+        <activity android:name=".ui.scroll.VPScrollActivity"/>
     </application>
 
 </manifest>
