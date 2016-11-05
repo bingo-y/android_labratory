@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.0'
 
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -20,4 +21,17 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+clean.dependsOn 'myLastTask'
+
+task myLastTask << {
+    println "this is my last task"
+}
+
+task copy (type: Copy){
+    from('build/intermediates/dex-cache/')
+    into('build/generated/')
+    include('cache.xml')
+    rename('cache.xml', 'cache-copy.xml')
 }

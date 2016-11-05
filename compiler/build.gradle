@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //引用注解的模块
+    compile project (':annotation')
+    //javapoet: 自动生成类的辅助库
+    compile 'com.squareup:javapoet:1.7.0'
+    //可以自动生成META-INF/services/javax.annotation.processing.Processor文件
+    compile 'com.google.auto.service:auto-service:1.0-rc2'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7

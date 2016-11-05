@@ -6,7 +6,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.bingo.laboratory.annotation.HelloAnnotation;
+import com.bingo.laboratory.annotation.SamplePojo;
+import com.bingo.laboratory.annotation.TestAnnotation;
 import com.bingo.laboratory.ui.animator.object.PeacockAnimatorActivity;
 import com.bingo.laboratory.ui.animator.object.PlayObjectAnimatorActivity;
 import com.bingo.laboratory.ui.animator.object.PropertyValueActivity;
@@ -18,6 +22,8 @@ import com.bingo.laboratory.ui.matrix.TransformMatrixActivity;
 import com.bingo.laboratory.ui.scroll.ScrollActivity;
 import com.bingo.laboratory.ui.scroll.VPScrollActivity;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         list.add("打开peacock_animator");
         list.add("打开scroll");
         list.add("打开vp_scroll");
+        list.add("resolve annotation");
+        list.add("process annotation");
     }
 
     @Override
@@ -89,9 +97,54 @@ public class MainActivity extends AppCompatActivity {
                         ActivityDispatchUtil.startActivity(MainActivity.this, VPScrollActivity.class);
                         break;
                     }
+                    case 10 : {
+                        resolveHelloAnnotation();
+                        break;
+                    }
+                    case 11: {
+                        Toast.makeText(MainActivity.this, new SamplePojo("aaa", "bbb").toString(), Toast.LENGTH_LONG).show();
+                        break;
+                    }
                 }
             }
         });
+    }
+
+    void resolveHelloAnnotation() {
+        try {
+//            Class cls = Class.forName("com.bingo.laboratory.annotation.HelloAnnotation");
+            Class cls = HelloAnnotation.class;
+            Field field =  cls.getDeclaredField("call");
+            Method[] methods = cls.getDeclaredMethods();
+            StringBuilder stringBuilder = new StringBuilder();
+            if (field != null) {
+                TestAnnotation testAnnotation = field.getAnnotation(TestAnnotation.class);
+                String value = testAnnotation.value();
+                String[] value2 = testAnnotation.value2();
+                stringBuilder.append(value);
+                for (int i = 0; i < value2.length; i ++){
+                    stringBuilder.append(" ").append(value2[i]);
+                }
+
+            }
+            if (methods != null && methods.length > 0) {
+                for (Method method : methods) {
+                    if (method.isAnnotationPresent(TestAnnotation.class)) {
+                        TestAnnotation testAnnotation = method.getAnnotation(TestAnnotation.class);
+                        String value = testAnnotation.value();
+                        String[] value2 = testAnnotation.value2();
+                        stringBuilder.append("\n").append(value);
+                        for (int i = 0; i < value2.length; i ++){
+                            stringBuilder.append(" ").append(value2[i]);
+                        }
+                    }
+                }
+            }
+            Toast.makeText(MainActivity.this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
+
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
     }
 //
 //    @Override

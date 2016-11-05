@@ -1,1 +1,6 @@
-include ':app'
+def initGradleEnvironment() {
+    println "init environment"
+}
+
+initGradleEnvironment()
+include ':app', ':annotation', ':compiler'
