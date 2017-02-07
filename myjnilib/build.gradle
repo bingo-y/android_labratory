@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            moduleName "myjnilib"
+            cFlags "-DANDROID_NDK -D_RELEASE" //这个对应的是生成模式
+            ldLibs "m", "log", "jnigraphics" //这个对应 LOCAL_LDLIBS 但是需要去掉前面的 “l”
+            abiFilters "all"//"armeabi", "armeabi-v7a", "x86"//这个是对应的 APP_ABI
+            stl "stlport_shared" //这个对应的是 APP_STL
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+}

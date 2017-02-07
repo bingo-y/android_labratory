@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.bingo.laboratory.annotation.HelloAnnotation;
 import com.bingo.laboratory.annotation.SamplePojo;
 import com.bingo.laboratory.annotation.TestAnnotation;
+import com.bingo.laboratory.live.LivePlayActivity;
+import com.bingo.laboratory.live.VideoEabledWebViewActivity;
 import com.bingo.laboratory.ui.animator.object.PeacockAnimatorActivity;
 import com.bingo.laboratory.ui.animator.object.PlayObjectAnimatorActivity;
 import com.bingo.laboratory.ui.animator.object.PropertyValueActivity;
@@ -21,6 +23,7 @@ import com.bingo.laboratory.ui.customview.CustomerViewActivity;
 import com.bingo.laboratory.ui.matrix.TransformMatrixActivity;
 import com.bingo.laboratory.ui.scroll.ScrollActivity;
 import com.bingo.laboratory.ui.scroll.VPScrollActivity;
+import com.bingo.myjnilib.JniUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         list.add("打开vp_scroll");
         list.add("resolve annotation");
         list.add("process annotation");
+        list.add("live play");
+        list.add("load jni");
     }
 
     @Override
@@ -103,6 +108,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 11: {
                         Toast.makeText(MainActivity.this, new SamplePojo("aaa", "bbb").toString(), Toast.LENGTH_LONG).show();
+                        break;
+                    }
+                    case 12: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, VideoEabledWebViewActivity.class);
+                        break;
+                    }
+                    case 13: {
+                        Toast.makeText(MainActivity.this, JniUtils.getStringFromC(), Toast.LENGTH_LONG).show();
                         break;
                     }
                 }

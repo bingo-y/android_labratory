@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bingo.laboratory">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +27,9 @@
         <activity android:name=".ui.animator.object.PeacockAnimatorActivity" />
         <activity android:name=".ui.scroll.ScrollActivity"/>
         <activity android:name=".ui.scroll.VPScrollActivity"/>
+        <activity android:name=".live.LivePlayActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".live.VideoEabledWebViewActivity"/>
     </application>
 
 </manifest>
