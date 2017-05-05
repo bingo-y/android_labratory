@@ -8,11 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bingo.laboratory.annotation.HelloAnnotation;
 import com.bingo.laboratory.annotation.SamplePojo;
 import com.bingo.laboratory.annotation.TestAnnotation;
+import com.bingo.laboratory.arouter.ArouterTest1Activity;
+import com.bingo.laboratory.cst.UrlConstant;
 import com.bingo.laboratory.live.LivePlayActivity;
 import com.bingo.laboratory.live.VideoEabledWebViewActivity;
+import com.bingo.laboratory.refresh.RefreshLoadMoreActivity;
+import com.bingo.laboratory.toolbar.TranslucentToolbarActivity;
 import com.bingo.laboratory.ui.animator.object.PeacockAnimatorActivity;
 import com.bingo.laboratory.ui.animator.object.PlayObjectAnimatorActivity;
 import com.bingo.laboratory.ui.animator.object.PropertyValueActivity;
@@ -50,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         list.add("process annotation");
         list.add("live play");
         list.add("load jni");
+        list.add("open arouter");
+        list.add("测试toolbar");
+        list.add("下拉刷新上拉加载");
     }
 
     @Override
@@ -116,6 +124,19 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 13: {
                         Toast.makeText(MainActivity.this, JniUtils.getStringFromC(), Toast.LENGTH_LONG).show();
+                        break;
+                    }
+                    case 14: {
+                        ARouter.getInstance().build(UrlConstant.ACTIVITY_TEST1).navigation();
+//                        ActivityDispatchUtil.startActivity(MainActivity.this, ArouterTest1Activity.class);
+                        break;
+                    }
+                    case 15: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, TranslucentToolbarActivity.class);
+                        break;
+                    }
+                    case 16: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, RefreshLoadMoreActivity.class);
                         break;
                     }
                 }

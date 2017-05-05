@@ -3,8 +3,11 @@
     package="com.bingo.laboratory">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -30,6 +33,10 @@
         <activity android:name=".live.LivePlayActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".live.VideoEabledWebViewActivity"/>
+        <activity android:name=".arouter.ArouterTest1Activity" />
+        <activity android:name=".toolbar.TranslucentToolbarActivity"
+            android:theme="@style/ImageTranslucentTheme"/>
+        <activity android:name=".refresh.RefreshLoadMoreActivity"/>
     </application>
 
 </manifest>
