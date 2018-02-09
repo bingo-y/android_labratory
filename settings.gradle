@@ -3,4 +3,4 @@ def initGradleEnvironment() {
 }
 
 initGradleEnvironment()
-include ':app', ':annotation', ':compiler', ':myjnilib'
+include ':app', ':annotation', ':myjnilib', ':finger' //':compiler',

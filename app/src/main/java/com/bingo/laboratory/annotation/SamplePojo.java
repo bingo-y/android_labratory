@@ -21,6 +21,7 @@ public class SamplePojo {
 
     @Override
     public String toString() {
-        return StringUtil.createString(this);
+//        return StringUtil.createString(this);
+        return "";
     }
 }

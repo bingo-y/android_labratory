@@ -37,6 +37,10 @@
         <activity android:name=".toolbar.TranslucentToolbarActivity"
             android:theme="@style/ImageTranslucentTheme"/>
         <activity android:name=".refresh.RefreshLoadMoreActivity"/>
+        <activity android:name=".pdf.PDFActivity" />
+        <activity android:name=".refresh.RefreshCircleActivity" />
+        <activity android:name=".ui.parcel.PacelActivity" />
+        <activity android:name=".ui.dagger.DaggerActivity" />
     </application>
 
 </manifest>

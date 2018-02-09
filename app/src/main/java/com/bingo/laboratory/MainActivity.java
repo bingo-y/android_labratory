@@ -1,5 +1,6 @@
 package com.bingo.laboratory;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.bingo.laboratory.arouter.ArouterTest1Activity;
 import com.bingo.laboratory.cst.UrlConstant;
 import com.bingo.laboratory.live.LivePlayActivity;
 import com.bingo.laboratory.live.VideoEabledWebViewActivity;
+import com.bingo.laboratory.pdf.PDFActivity;
+import com.bingo.laboratory.refresh.RefreshCircleActivity;
 import com.bingo.laboratory.refresh.RefreshLoadMoreActivity;
 import com.bingo.laboratory.toolbar.TranslucentToolbarActivity;
 import com.bingo.laboratory.ui.animator.object.PeacockAnimatorActivity;
@@ -25,7 +28,10 @@ import com.bingo.laboratory.ui.animator.value.CharValueAnimatorActivity;
 import com.bingo.laboratory.ui.bezier.BezierActivity;
 import com.bingo.laboratory.ui.canvas.CanvasActivity;
 import com.bingo.laboratory.ui.customview.CustomerViewActivity;
+import com.bingo.laboratory.ui.dagger.DaggerActivity;
 import com.bingo.laboratory.ui.matrix.TransformMatrixActivity;
+import com.bingo.laboratory.ui.parcel.House;
+import com.bingo.laboratory.ui.parcel.PacelActivity;
 import com.bingo.laboratory.ui.scroll.ScrollActivity;
 import com.bingo.laboratory.ui.scroll.VPScrollActivity;
 import com.bingo.myjnilib.JniUtils;
@@ -58,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
         list.add("open arouter");
         list.add("测试toolbar");
         list.add("下拉刷新上拉加载");
+        list.add("pdf");
+        list.add("自定义下拉样式");
+        list.add("传递parcelable");
+        list.add("dagger");
     }
 
     @Override
@@ -137,6 +147,28 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 16: {
                         ActivityDispatchUtil.startActivity(MainActivity.this, RefreshLoadMoreActivity.class);
+                        break;
+                    }
+                    case 17: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, PDFActivity.class);
+                        break;
+                    }
+                    case 18: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, RefreshCircleActivity.class);
+                        break;
+                    }
+                    case 19: {
+                        House house = new House();
+                        house.setName("故宫");
+                        house.setAddress("北京");
+                        house.setSize(3333);
+                        Intent intent = new Intent(MainActivity.this, PacelActivity.class);
+                        intent.putExtra("house", house);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 20: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, DaggerActivity.class);
                         break;
                     }
                 }

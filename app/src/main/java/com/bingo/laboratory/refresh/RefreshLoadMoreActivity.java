@@ -97,7 +97,7 @@ public class RefreshLoadMoreActivity extends AppCompatActivity {
         ptrFrame.postDelayed(new Runnable() {
             @Override
             public void run() {
-                // ptrFrame.autoRefresh();
+                 ptrFrame.autoRefresh();
             }
         }, 150);
 
