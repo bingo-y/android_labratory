@@ -1,8 +1,8 @@
 package com.bingo.laboratory;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,9 +13,8 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.bingo.laboratory.annotation.HelloAnnotation;
 import com.bingo.laboratory.annotation.SamplePojo;
 import com.bingo.laboratory.annotation.TestAnnotation;
-import com.bingo.laboratory.arouter.ArouterTest1Activity;
+import com.bingo.laboratory.constraint.ConstraintActivity;
 import com.bingo.laboratory.cst.UrlConstant;
-import com.bingo.laboratory.live.LivePlayActivity;
 import com.bingo.laboratory.live.VideoEabledWebViewActivity;
 import com.bingo.laboratory.pdf.PDFActivity;
 import com.bingo.laboratory.refresh.RefreshCircleActivity;
@@ -34,7 +33,6 @@ import com.bingo.laboratory.ui.parcel.House;
 import com.bingo.laboratory.ui.parcel.PacelActivity;
 import com.bingo.laboratory.ui.scroll.ScrollActivity;
 import com.bingo.laboratory.ui.scroll.VPScrollActivity;
-import com.bingo.myjnilib.JniUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -68,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("自定义下拉样式");
         list.add("传递parcelable");
         list.add("dagger");
+        list.add("constraint");
     }
 
     @Override
@@ -133,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case 13: {
-                        Toast.makeText(MainActivity.this, JniUtils.getStringFromC(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(MainActivity.this, JniUtils.getStringFromC(), Toast.LENGTH_LONG).show();
                         break;
                     }
                     case 14: {
@@ -169,6 +168,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 20: {
                         ActivityDispatchUtil.startActivity(MainActivity.this, DaggerActivity.class);
+                        break;
+                    }
+                    case 21: {
+                        ActivityDispatchUtil.startActivity(MainActivity.this, ConstraintActivity.class);
                         break;
                     }
                 }

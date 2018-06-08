@@ -24,7 +24,7 @@ import com.bingo.laboratory.recycler.RecyclerViewUtils;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
@@ -38,9 +38,9 @@ import in.srain.cube.views.ptr.PtrHandler;
 
 public class RefreshLoadMoreActivity extends AppCompatActivity {
 
-    @Bind(R.id.list)
+    @BindView(R.id.list)
     RecyclerView recyclerView;
-    @Bind(R.id.pcfl_content)
+    @BindView(R.id.pcfl_content)
     PtrClassicFrameLayout ptrFrame;
 
     /**服务器端一共多少条数据*/

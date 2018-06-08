@@ -41,6 +41,7 @@
         <activity android:name=".refresh.RefreshCircleActivity" />
         <activity android:name=".ui.parcel.PacelActivity" />
         <activity android:name=".ui.dagger.DaggerActivity" />
+        <activity android:name=".constraint.ConstraintActivity" />
     </application>
 
 </manifest>

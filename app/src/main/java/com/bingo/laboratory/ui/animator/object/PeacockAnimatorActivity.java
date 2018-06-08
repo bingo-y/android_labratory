@@ -11,7 +11,7 @@ import android.widget.Button;
 
 import com.bingo.laboratory.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -24,17 +24,17 @@ import butterknife.OnClick;
  */
 public class PeacockAnimatorActivity extends AppCompatActivity {
 
-    @Bind(R.id.menu)
+    @BindView(R.id.menu)
     Button menu;
-    @Bind(R.id.item1)
+    @BindView(R.id.item1)
     Button item1;
-    @Bind(R.id.item2)
+    @BindView(R.id.item2)
     Button item2;
-    @Bind(R.id.item3)
+    @BindView(R.id.item3)
     Button item3;
-    @Bind(R.id.item4)
+    @BindView(R.id.item4)
     Button item4;
-    @Bind(R.id.item5)
+    @BindView(R.id.item5)
     Button item5;
 
     boolean isMenuOpen = false;
@@ -150,6 +150,5 @@ public class PeacockAnimatorActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

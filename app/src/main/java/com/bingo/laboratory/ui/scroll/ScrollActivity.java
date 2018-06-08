@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 import com.bingo.laboratory.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -23,13 +23,13 @@ import butterknife.OnClick;
  */
 public class ScrollActivity extends AppCompatActivity {
 
-    @Bind(R.id.b_scroll_by)
+    @BindView(R.id.b_scroll_by)
     Button bScrollBy;
-    @Bind(R.id.b_scroll_to)
+    @BindView(R.id.b_scroll_to)
     Button bScrollTo;
-    @Bind(R.id.ll_content)
+    @BindView(R.id.ll_content)
     LinearLayout llContent;
-    @Bind(R.id.ll_second)
+    @BindView(R.id.ll_second)
     LinearLayout llSecond;
 
     @Override

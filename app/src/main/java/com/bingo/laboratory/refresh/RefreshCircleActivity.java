@@ -17,7 +17,7 @@ import com.github.ybq.android.spinkit.SpriteFactory;
 import com.github.ybq.android.spinkit.Style;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrFrameLayout;
@@ -31,14 +31,14 @@ import in.srain.cube.views.ptr.PtrHandler;
 public class RefreshCircleActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.pcfl_content)
+    @BindView(R.id.pcfl_content)
     PtrFrameLayout ptrFrame;
 
 
     Handler handler = new Handler(Looper.getMainLooper());
 //    @Bind(R.id.fc_loading)
 //    FadingCircle fcLoading;
-    @Bind(R.id.iv_loading)
+    @BindView(R.id.iv_loading)
     ImageView ivLoading;
 //    @Bind(R.id.spin_kit)
 //    SpinKitView spinKit;

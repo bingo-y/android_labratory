@@ -6,6 +6,6 @@ package com.bingo.laboratory.cst;
  */
 
 public class UrlConstant {
-    public static final String ACTIVITY_TEST1 = "/arouter/activity1";
+    public static final String ACTIVITY_TEST1 = "/bingo/activity1";
     public static final int LoginExtra = 100;
 }

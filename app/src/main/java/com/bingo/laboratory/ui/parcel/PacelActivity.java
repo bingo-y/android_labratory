@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.bingo.laboratory.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 
 public class PacelActivity extends AppCompatActivity {
 
-    @Bind(R.id.tv_parcel)
+    @BindView(R.id.tv_parcel)
     TextView tvParcel;
 
     @Override
